@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep -l \"video_box\\\\|video/play.*video/stop\\\\|video_toolbar\")"
+    ]
+  }
+}
