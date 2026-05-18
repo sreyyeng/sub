@@ -8,7 +8,9 @@ subprojects/cairo*
 subprojects/curl-*
 subprojects/dav1d
 subprojects/ffmpeg
-subprojects/ffms2*
+subprojects/ffms2-*
+# Always keep .wrap files (they're tiny config files meson needs)
+!subprojects/*.wrap
 subprojects/fontconfig*
 subprojects/freetype2
 subprojects/fribidi
