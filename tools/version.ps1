@@ -78,11 +78,18 @@ if ($exactGitTag -match $semVerMatch) {
         break;
       }
     }
-  } else {
-    $version['TAGGED_RELEASE'] = $false
-    $version['RESOURCE_BASE_VERSION'] = @(3, 4, 2)
-    $version['INSTALLER_VERSION'] = '3.4.2'
   }
+}
+
+# Final safety net: if RESOURCE_BASE_VERSION / INSTALLER_VERSION weren't set
+# above (e.g. git repo with no tags), fall back to the hardcoded AIbeta defaults
+# so the resource compiler and installer always have something to read.
+if (-not $version.ContainsKey('RESOURCE_BASE_VERSION')) {
+  $version['TAGGED_RELEASE'] = $false
+  $version['RESOURCE_BASE_VERSION'] = @(3, 4, 2)
+}
+if (-not $version.ContainsKey('INSTALLER_VERSION')) {
+  $version['INSTALLER_VERSION'] = '3.4.2'
 }
 
 $version['BUILD_GIT_VERSION_NUMBER'] = $gitRevision
