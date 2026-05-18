@@ -1,6 +1,10 @@
 [wrap-git]
 url = https://github.com/FFMS/ffms2.git
-revision = head
+# Pinned to 5.0 (release tag) for compatibility with the ffmpeg meson-6.1 wrap.
+# Using `revision = head` breaks the build because recent ffms2 master uses
+# FFmpeg 7.x APIs (AV_DISPOSITION_MULTILAYER, AVStereo3D.primary_eye) that
+# aren't available in the pinned ffmpeg 6.1.
+revision = 5.0
 patch_directory = ffms2
 
 [provide]
