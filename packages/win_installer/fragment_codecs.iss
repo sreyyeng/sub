@@ -1,6 +1,6 @@
 [Files]
 ; Avisynth
-DestDir: {app}; Source: {#DEPS_DIR}\AvisynthPlus64\x64\Output\system\DevIL.dll; Flags: ignoreversion; Components: main
+; DevIL.dll removed in newer AviSynth+ releases (used to be bundled for ImageReader plugin)
 DestDir: {app}; Source: {#DEPS_DIR}\AvisynthPlus64\x64\Output\AviSynth.dll; Flags: ignoreversion; Components: main
 DestDir: {app}; Source: {#DEPS_DIR}\AvisynthPlus64\x64\Output\plugins\DirectShowSource.dll; Flags: ignoreversion; Components: main
 ; VSFilter
